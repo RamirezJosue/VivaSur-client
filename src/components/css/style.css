@@ -14,7 +14,7 @@
   height: auto;
 }
 
-/*Estilos para el boton: buscar y menu */
+/*Estilos para el boton:menu */
 .boton-menu{
   border: 0;
   font-size: 2rem;
@@ -48,6 +48,17 @@
 
 #menu-principal ul a:hover{
   color: red;
+}
+
+/*Inicio*/
+.texto-encabezado .display-4{
+  margin-top:  4rem;
+}
+.btn-primary {
+  color: #fff;
+  background-color: #007bff;
+  border-color: #007bff;
+  margin-top: 1rem;
 }
 
 
