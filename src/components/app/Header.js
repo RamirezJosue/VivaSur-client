@@ -33,15 +33,15 @@ class Header extends Component {
           <button type="button" className="boton-menu">
             <i class="fa fa-bars" aria-hidden="true"></i>
           </button>
-          <form>
+          <form id="bloque-buscar">
             <div className="contenedor-bloque-buscar">
               <input type="text" placeholder="Buscar..." />
               <input type="submit" value="Buscar" />
             </div>
           </form>
-          <nav id="menu-principal" className="ml-auto" >
+          <nav id="menu-principal"  >
             <ul>
-              <li><Link to="/home">Inicio</Link></li>
+              <li className="active"><Link to="/home">Inicio</Link></li>
               <li><Link to="/login">login</Link></li>
               <li><Link to='/catalogo/habitacion/list'>Habitaciones</Link></li>
             </ul>
