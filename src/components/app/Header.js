@@ -20,6 +20,17 @@ import {
 
 
 class Header extends Component {
+  constructor(props) {
+    super(props);
+    this.toggle = this.toggle.bind(this);
+    this.state = { collapse: false };
+  }
+
+  toggle() {
+    this.setState({ collapse: !this.state.collapse });
+  }  
+  
+
   render() {
     return (
       <header className="encabezado  navbar fixed-top ">
@@ -27,26 +38,20 @@ class Header extends Component {
           <a className="logo">
             <img src="" alt="Logo del sitio" />
           </a>
-          <button type="button" className="boton-buscar">
-            <i class="fa fa-search" aria-hidden="true"></i>
-          </button>
-          <button type="button" className="boton-menu">
+         
+          <button type="button" className="boton-menu"  onClick={this.toggle}>
             <i class="fa fa-bars" aria-hidden="true"></i>
           </button>
-          <form id="bloque-buscar">
-            <div className="contenedor-bloque-buscar">
-              <input type="text" placeholder="Buscar..." />
-              <input type="submit" value="Buscar" />
-            </div>
-          </form>
-          <nav id="menu-principal"  >
-            <ul>
-              <li className="active"><Link to="/home">Inicio</Link></li>
-              <li><Link to="/login">login</Link></li>
-              <li><Link to='/catalogo/habitacion/list'>Habitaciones</Link></li>
-            </ul>
+          
+            <Collapse id="menu-principal" isOpen={this.state.collapse} >
+              <ul>
+                <li className="active"><Link to="/home">Inicio</Link></li>
+                <li><Link to="/login">login</Link></li>
+                <li><Link to='/catalogo/habitacion/list'>Habitaciones</Link></li>
+              </ul>
 
-          </nav>
+            </Collapse>
+
         </div>
       </header>
     );
