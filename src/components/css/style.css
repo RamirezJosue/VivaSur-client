@@ -46,8 +46,7 @@
   text-decoration: none;
 }
 
-#menu-principal ul a:hover,
-#menu-principal ul li.active a{
+#menu-principal ul a:hover{
   color: red;
 }
 
