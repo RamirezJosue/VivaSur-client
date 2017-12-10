@@ -6,19 +6,17 @@ import {
 import { Container, Row, Col } from 'reactstrap';
 
 //
-import '../css/style.css';
-import '../images/font-awesome/css/font-awesome.min.css'
-import '../images/hotel.jpg'
+    
 
 class Home extends Component {
 
     render() {
         return (
-            <section className="agencia" id="agencia">
+            <section className="agencia py-2" id="agencia">
                 <Container>
-                    <h2 className="h3 text-center font-weight-bold"> Agencia de programacion de aplicaciones</h2>
                     <Row>
                         <Col xs="12" md="8" xl="9">
+                            <h2 className="h3 text-center font-weight-bold text-md-left" > Agencia de programacion de aplicaciones</h2>
                             <p> NETWORK te asesora en el desarrollo y el diseño para que tu aplicacion movil salga a al Luz.
                             Ponemosa tu disposicion la mejores plataformas del mundo  de las telcomuniaciones.</p>
                             <p>Ponemos a tu alcance un servicio adaptado a tus necesidades, desde una consultoria  integral

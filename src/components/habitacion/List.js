@@ -1,74 +1,81 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
-import { connect } from 'react-redux'
-import { getList, del } from '../../actions/habitacion-action'
+import React, { Component } from 'react';
 import {
     Link
 } from 'react-router-dom'
 
+import { Container, Row, Col } from 'reactstrap';
+
+//
+
 
 class List extends Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            q: "",
-        }
-    }
-
-    componentWillMount() {
-        this.props.getList(this.state.q)
-    }
-    handleInputChange = event => {
-        const target = event.target
-        const value = target.type === 'checkbox' ? target.checked : target.value
-        const name = target.name
-
-        this.setState({
-            [name]: value
-        })
-        this.props.getList(this.state.q)
-    }
 
     render() {
-        
-        let { list, del } = this.props
-        if (list === null) {
-            list = []
-        }
         return (
-            <div className=" contenedor contenedor_habitacion" key="Subheader" >
-            {list.map((d, index) =>
-                <div className="habitacion" key={index}>
-                    <div className="img-habitacion">
-                        <img src={d.foto} alt={d.nombre} />
-                    </div>
-                    <div className="info_rooms">
-                        <div className="info">
-                            <h3>
-                                {d.nombre}
-                            </h3>
-                        </div>
-                        <div className="info info_color">
-                            <Link to={`/catalogo/habitacion/edit/${d.id}`}>Mas informacion</Link>
-                            <p>
-                                <Link exact to="/person/form" activeClassName="selected">Reservar</Link>
-                            </p>
+            <section className="tu-mejor-eleccion">
+                <div className="container">
+                    <h2 className="h3 text-center font-weight-bold">¿Porque somos <span>tu mejor eleccion? </span> </h2>
+                    <p className="text-center   ">
+                        Desarrollo web y Apps para empresas y profesionales
+                     </p>
+                    <div className="row">
+                        <ul className="col-6">
+                            <li>
+                                <i className="fa fa-briefcase" aria-hidden="true" />
+                                <div className="contenedor-eleccion">
+                                    <h4>Aplicaciones para la nube</h4>
+                                    <p className="hidden-sm-down">Para empresa que requiere ampliar sus plataformas de gestión</p>
+                                </div>
+                            </li>
+                            <li>
+                                <i className="fa fa-bullhorn" aria-hidden="true" />
+                                <div className="contenedor-eleccion">
+                                    <h4>Fábrica de software</h4>
+                                    <p className="hidden-sm-down">Servicios de mejora correctiva y evolutiva para sus aplicasiones</p>
+                                </div>
+                            </li>
+                            <li>
+                                <i className="fa fa-comment-o" aria-hidden="true" />
+                                <div className="contenedor-eleccion">
+                                    <h4>Gestión en la nube</h4>
+                                    <p className="hidden-sm-down">Para empresa que requiere ampliar sus plataformas de gestión </p>
+                                </div>
+                            </li>
+                        </ul>
+                       
+                        <ul className="col-6">
+                            <li>
+                                <i className="fa fa-calendar" aria-hidden="true" />
+                                <div className="contenedor-eleccion">
+                                    <h4>Videojuegos</h4>
+                                    <p className="hidden-sm-down">Para empresa que requiere ampliar sus plataformas para su gestión </p>
+                                </div>
+                            </li>
+                            <li>
+                                <i className="fa fa-check-square-o" aria-hidden="true" />
+                                <div className="contenedor-eleccion">
+                                    <h4>Diseño persoalizado</h4>
+                                    <p className="hidden-sm-down">Customiza hasta el ultimo pixel de tu App. Infinitas Posibilidades </p>
+                                </div>
+                            </li>
+                            <li>
+                                <i className="fa fa-cogs" aria-hidden="true" />
+                                <div className="contenedor-eleccion">
+                                    <h4>Funciones a medida</h4>
+                                    <p>Tiene mas de 50 funcioens predesarrolladas para escoger. </p>
+                                </div>
+                            </li>
+                        </ul>
+                        <div>
+                            <img src="" alt="Mundo movil"/>
                         </div>
                     </div>
                 </div>
-            )}
-        </div>
-        
-        )
+
+            </section>
+
+        );
     }
 }
-List.propTypes = {
-    list: PropTypes.array
-}
-const mapStateToProps = (state) => {
-    return { list: state.habitacion.list }
-}
-export default connect(mapStateToProps, {
-    getList,
-    del
-})(List)
+
+export default List;

@@ -94,5 +94,19 @@
   }
 }
 
+/*--------------------------
+SECCION AGENCIA
+----------------------------*/
+.agencia{
+  background: rebeccapurple;
+  color: #fff;
+}
+
+.agencia img{
+  width: 80%;
+  margin: 0 auto;
+  display: block;
+}
+
 
 
