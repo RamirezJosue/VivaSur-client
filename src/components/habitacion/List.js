@@ -24,7 +24,7 @@ class List extends Component {
                                 <i className="fa fa-briefcase" aria-hidden="true" />
                                 <div className="contenedor-eleccion">
                                     <h4>Aplicaciones para la nube</h4>
-                                    <p className="hidden-sm-down">Para empresa que requiere ampliar sus plataformas de gestión</p>
+                                    <p className="d-none d-sm-block">Para empresa que requiere ampliar sus plataformas de gestión</p>
                                 </div>
                             </li>
                             <li>
