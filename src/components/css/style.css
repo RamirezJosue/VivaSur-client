@@ -9,6 +9,9 @@
   color: #fff;
   background-size: cover;
   height: 100vh;
+  display: flex;
+  flex-direction: column;
+
 }
 .encabezado .container{
   display: flex;
@@ -57,6 +60,12 @@
 }
 
 /*Inicio*/
+.texto-encabezado{
+  flex: 1 1 auto;
+  display: flex;
+  align-items: center;
+}
+
 .texto-encabezado .display-4{
   margin-top:  4rem;
 }
@@ -66,5 +75,24 @@
   border-color: #007bff;
   margin-top: 1rem;
 }
+.flecha-bajar a{
+  display: inline-block;
+  color: #fff;
+  font-size: 4rem; 
+  animation: flecha-animado 2s ease-in-out infinite;
+}
+
+@keyframes flecha-animado{
+  from{
+    transform: translateY(0);
+  }
+  50%{
+    transform: translateY(6px);
+  }
+  to{
+    transform: translateY(0);
+  }
+}
+
 
 

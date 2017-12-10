@@ -34,7 +34,8 @@ class Header extends Component {
 
   render() {
     return (
-      
+      <section className="bienvenidos">
+
         <header className="encabezado  navbar fixed-top ">
           <div className="container">
             <a className="logo">
@@ -56,7 +57,18 @@ class Header extends Component {
 
           </div>
         </header>
-     
+        <div className="texto-encabezado text-center" >
+          <div className="container">
+            <h1 className="display-4">Diseno de APPS para empresas</h1>
+            <p> Creamos aplicaciones  segun las necesidadesy requirimientos de nuestros clientes.</p>
+            <Link to="#" className=" btn btn-primary btn-lg" > Ponte en contacto </Link>
+          </div>
+        </div>
+        <div className="flecha-bajar text-center">
+          <Link to="#"> <i class="fa fa-angle-down" aria-hidden="true"></i></Link>
+        </div>
+      </section>
+
     );
   }
 }
