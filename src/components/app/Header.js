@@ -29,21 +29,22 @@ class Header extends Component {
 
   toggle() {
     this.setState({ collapse: !this.state.collapse });
-  }  
-  
+  }
+
 
   render() {
     return (
-      <header className="encabezado  navbar fixed-top ">
-        <div className="container">
-          <a className="logo">
-            <img src="" alt="Logo del sitio" />
-          </a>
-         
-          <button type="button" className="boton-menu"  onClick={this.toggle}>
-            <i class="fa fa-bars" aria-hidden="true"></i>
-          </button>
-          
+      
+        <header className="encabezado  navbar fixed-top ">
+          <div className="container">
+            <a className="logo">
+              <img src="" alt="Logo del sitio" />
+            </a>
+
+            <button type="button" className="boton-menu" onClick={this.toggle}>
+              <i class="fa fa-bars" aria-hidden="true"></i>
+            </button>
+
             <Collapse id="menu-principal" isOpen={this.state.collapse} >
               <ul>
                 <li className="active"><Link to="/home">Inicio</Link></li>
@@ -53,8 +54,9 @@ class Header extends Component {
 
             </Collapse>
 
-        </div>
-      </header>
+          </div>
+        </header>
+     
     );
   }
 }

@@ -4,6 +4,12 @@
   color: white;
   padding: .5rem 0;
 }
+.bienvenidos{
+  background:url("../images/inmobiliaria.jpg") no-repeat center top;
+  color: #fff;
+  background-size: cover;
+  height: 100vh;
+}
 .encabezado .container{
   display: flex;
   align-items: center;
