@@ -31,14 +31,14 @@ class List extends Component {
                                 <i className="fa fa-bullhorn" aria-hidden="true" />
                                 <div className="contenedor-eleccion">
                                     <h4>Fábrica de software</h4>
-                                    <p className="hidden-sm-down">Servicios de mejora correctiva y evolutiva para sus aplicasiones</p>
+                                    <p className="d-none d-sm-block">Servicios de mejora correctiva y evolutiva para sus aplicasiones</p>
                                 </div>
                             </li>
                             <li>
                                 <i className="fa fa-comment-o" aria-hidden="true" />
                                 <div className="contenedor-eleccion">
                                     <h4>Gestión en la nube</h4>
-                                    <p className="hidden-sm-down">Para empresa que requiere ampliar sus plataformas de gestión </p>
+                                    <p className="d-none d-sm-block">Para empresa que requiere ampliar sus plataformas de gestión </p>
                                 </div>
                             </li>
                         </ul>
@@ -48,21 +48,21 @@ class List extends Component {
                                 <i className="fa fa-calendar" aria-hidden="true" />
                                 <div className="contenedor-eleccion">
                                     <h4>Videojuegos</h4>
-                                    <p className="hidden-sm-down">Para empresa que requiere ampliar sus plataformas para su gestión </p>
+                                    <p className="d-none d-sm-block">Para empresa que requiere ampliar sus plataformas para su gestión </p>
                                 </div>
                             </li>
                             <li>
                                 <i className="fa fa-check-square-o" aria-hidden="true" />
                                 <div className="contenedor-eleccion">
                                     <h4>Diseño persoalizado</h4>
-                                    <p className="hidden-sm-down">Customiza hasta el ultimo pixel de tu App. Infinitas Posibilidades </p>
+                                    <p className="d-none d-sm-block">Customiza hasta el ultimo pixel de tu App. Infinitas Posibilidades </p>
                                 </div>
                             </li>
                             <li>
                                 <i className="fa fa-cogs" aria-hidden="true" />
                                 <div className="contenedor-eleccion">
                                     <h4>Funciones a medida</h4>
-                                    <p>Tiene mas de 50 funcioens predesarrolladas para escoger. </p>
+                                    <p className="d-none d-sm-block">Tiene mas de 50 funcioens predesarrolladas para escoger. </p>
                                 </div>
                             </li>
                         </ul>
