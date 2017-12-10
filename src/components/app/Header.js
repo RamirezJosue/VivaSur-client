@@ -59,8 +59,8 @@ class Header extends Component {
         </header>
         <div className="texto-encabezado text-center" >
           <div className="container">
-            <h1 className="display-4">Diseno de APPS para empresas</h1>
-            <p> Creamos aplicaciones  segun las necesidadesy requirimientos de nuestros clientes.</p>
+            <h1 className="display-4">VivaSur constuyendo tus Sueños</h1>
+            <p> Brindamos segun las necesidades y requirimientos de nuestros clientes.</p>
             <Link to="#" className=" btn btn-primary btn-lg" > Ponte en contacto </Link>
           </div>
         </div>
