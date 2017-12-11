@@ -200,4 +200,31 @@ SECCION PIE DE PAGINA
   }
  }
 
+ @media (min-width:992px){
+  html{
+    font-size: 16px;
+ }
+ .tu-mejor-eleccion ul li {
+  display: flex;
+}
+.tu-mejor-eleccion ul .fa {
+  text-align: center;
+  flex: 0 1 auto;
+  margin-right: 1rem;
+}
+.contenedor-eleccion{
+  flex: 1 0 0px;
+}
+.tu-mejor-eleccion ul li .contenedor-eleccion h4 {
+  margin-top: 0;
+  font-size: 1rem;
+}
+.tu-mejor-eleccion ul:first-child .fa{
+  order: 1;
+}
+.tu-mejor-eleccion ul li p {
+  font-size: .85rem;
+}
+}
+
 
