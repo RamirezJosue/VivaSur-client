@@ -58,6 +58,10 @@
 #menu-principal ul a:hover{
   color: red;
 }
+#menu-principal ul a:hover,
+#menu-principal ul li.active a{
+  color: red;
+}
 
 /*Inicio*/
 .texto-encabezado{
@@ -137,5 +141,63 @@ TU MEJOR ELECCION
   min-height: 9rem;
 
 }
+
+/*--------------------------
+SECCION PIE DE PAGINA
+-----------------------------*/
+.piedepagina{
+  background: rebeccapurple;
+  color: #fff;
+  text-align: center;
+  font-size: .9rem;
+}
+ .piedepagina .redes-sociales{
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+ }
+ .piedepagina .redes-sociales a{
+  color: white;
+  font-size: 2rem;
+  margin: 0 .5rem;
+  opacity: .7;
+ }
+ .piedepagina .redes-sociales a:hover{
+ 
+  opacity: 1;
+ }
+
+ /*--------------------------
+ EMPIEZA LAS MEDIAS QUERIES
+ -------------------------*/
+ @media (min-width:768px){
+   #menu-principal{
+     height: auto !important;
+     display: block;
+     flex: 0 1 auto;
+     margin-left: auto;
+     order: 1;
+   }
+   #menu-principal ul{
+    display: flex;
+    margin: 0 0 0 0;
+  }
+  #menu-principal ul li a{
+    padding: .8rem;
+    text-transform: capitalize;
+    margin: 0 .3rem;
+    border-top: 0px;
+    border-bottom: 4px solid transparent;  
+    transition: all .5s ease;
+  }
+  #menu-principal ul li.active a,
+  #menu-principal ul li a:hover{
+    color: red;
+    border-bottom: 4px solid;
+
+  }
+ }
 
 

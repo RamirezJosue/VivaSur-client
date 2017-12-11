@@ -42,7 +42,7 @@ class Header extends Component {
               <img src="" alt="Logo del sitio" />
             </a>
 
-            <button type="button" className="boton-menu" onClick={this.toggle}>
+            <button type="button" className="boton-menu d-md-none" onClick={this.toggle}>
               <i class="fa fa-bars" aria-hidden="true"></i>
             </button>
 
