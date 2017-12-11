@@ -13,7 +13,8 @@ class Paginacion extends Component {
     render() {
         return (
             <div>
-                implementar 
+                implementar sdakflkjljfkfkshhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhggggggggggggggggggggggggggggggggggggggggggggggg
+                ggggggg
                 </div>
 
         );
