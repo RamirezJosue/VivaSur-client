@@ -6,6 +6,7 @@ import {
 import { Container, Row, Col } from 'reactstrap';
 
 //
+import inmo from '../images/inmo.jpg'
     
 
 class Home extends Component {
@@ -26,7 +27,7 @@ class Home extends Component {
                             de apps disenador por nosotros y avaladas por nuestros anios de experencia.</p>
                         </Col>
                         <Col xs="12" md="4" xl="3">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Jousten_Hotel.JPG/200px-Jousten_Hotel.JPG" alt="La agencia" />
+                            <img src={inmo} alt="La agencia" />
                         </Col>
 
                     </Row>
