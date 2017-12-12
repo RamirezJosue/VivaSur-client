@@ -51,7 +51,7 @@ class Header extends Component {
                 <li className="active"><Link to="/home">Inicio</Link></li>
                 <li><Link to="/login">Nosotros</Link></li>
                 <li><Link to='/catalogo/habitacion/list'>Servicios</Link></li>
-                <li><Link to='/catalogo/habitacion/list'>Contacto</Link></li>
+                <li><Link to='/paginacion'>Contacto</Link></li>
               </ul>
 
             </Collapse>
