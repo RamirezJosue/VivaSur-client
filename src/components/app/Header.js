@@ -48,8 +48,8 @@ class Header extends Component {
 
             <Collapse id="menu-principal" isOpen={this.state.collapse} >
               <ul>
-                <li className="active"><Link to="/home">Inicio</Link></li>
-                <li><Link to="/login">Nosotros</Link></li>
+                <li><Link to="/home">Inicio</Link></li>
+                <li><Link to="/reserva/form">Nosotros</Link></li>
                 <li><Link to='/catalogo/habitacion/list'>Servicios</Link></li>
                 <li><Link to='/paginacion'>Contacto</Link></li>
               </ul>

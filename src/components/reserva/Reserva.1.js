@@ -1,10 +1,12 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
-
 import { getById, save, update } from '../../actions/reserva-action'
-import { getList as getPersonList } from '../../actions/person-action'
+import { getList as getClienteList } from '../../actions/cliente-action'
 import { connect } from 'react-redux'
+import DateTime from 'react-datetime'
+//import DatetimeRangePicker from 'react-datetime-range-picker';
+
 
 import moment from 'moment';
 
@@ -21,17 +23,16 @@ class Reserva extends Component {
             id: props.data ? props.data.id : null,
             costo_alojamiento: props.data ? props.data.costo_alojamiento : '',
             tipo_reserva: props.data ? props.data.tipo_reserva : '',
-            person: props.data ? props.data.person : false,
+            cliente: props.data ? props.data.cliente : '',
             estado: props.data ? props.data.estado : false,
             fecha_ingresa: props.data ? props.data.fecha_ingresa : '',
-            fecha_salida: props.data ? props.data.fecha_salida : '',
-            
+            f: props.data ? moment(props.data.fecha_ingresa, 'YYYY-MM-DD hh:mm A') : moment().format('YYYY-MM-DD hh:mm A')
         }
     }
 
 
     componentWillMount = () => {
-        this.props.getPersonList("")
+        this.props.getClienteList("")
     }
 
     componentDidMount = () => {
@@ -42,73 +43,86 @@ class Reserva extends Component {
                     id: data.id,
                     costo_alojamiento: data.costo_alojamiento,
                     tipo_reserva: data.tipo_reserva,
-                    person: data.person,
+                    cliente: data.cliente,
                     estado: data.estado,
                     fecha_ingresa: data.fecha_ingresa,
-                    fecha_salida: data.fecha_salida,
-                    
+                    f: moment(data.fecha_ingresa, 'YYYY-MM-DD hh:mm A'),
+
+
                 });
             });
         }
     }
 
-    handleChange = (event) => {
-        const target = event.target;
-        const value = target.type === 'checkbox' ? target.checked : target.value;
-        const name = target.name;
+    handleInputChange = event => {
+        const target = event.target
+        const value = target.type === 'checkbox' ? target.checked : target.value
+        const name = target.name
 
         this.setState({
             [name]: value
-        });
+        })
+
+    }
+    handleChangedate = (newDate) => {
+        return this.setState({ f: newDate });
     }
 
 
-    handleSubmit = (event) => {
-        const {id} = this.props.match.params;
+    handleSubmit = event => {
+        event.preventDefault()
+        console.log('d=' + JSON.stringify(this.state))
+
+        const { id } = this.props.match.params;
+        this.state.fecha_ingresa = moment(this.state.f)
         if (id) {
-            this.props.update(this.state, this.props.history)
+            this.props.update(this.state, this.props.history).then(r => {
+                r.push('/hotel/cliente2/list')
+            }, error => {
+                throw (error)
+            })
         } else {
-            this.props.save(this.state, this.props.history)
+            this.props.save(this.state, this.props.history).then(r => {
+                r.push('/home')
+            }, error => {
+                throw (error)
+            })
         }
-        event.preventDefault();
     }
-
 
 
 
     render() {
-        let { person_list } = this.props
+        let { cliente_list } = this.props
         return (
             <div className="imgbackground portada">
                 <div className="reserva">
-                    <form >
+                    <form onSubmit={this.handleSubmit}>
                         <input type="text" className="form2" placeholder="Costo"
                             value={this.state.costo_alojamiento}
-                            onChange={this.handleChange}
+                            onChange={this.handleInputChange}
                             name="costo_alojamiento" />
                         <input type="text" className="form2" placeholder="Tipo Reserva"
                             value={this.state.tipo_reserva}
-                            onChange={this.handleChange}
+                            onChange={this.handleInputChange}
                             name="tipo_reserva" />
-                        <div>Fecha Ingresa</div>
-                        <input
-                            className="form2"
-                            type="date"
-                        />
-                        <div>Fecha Salidad</div>
-                        <input
-                            className="form2"
-                            type="date"
-                        />
                         <div>Cliente</div>
-                        <Input type="select" 
-                            value={this.state.person}
-                            name="person"
+                        <label>Fecha Ingreso</label>
+                        <DateTime
+                            dateTime={this.state.f}
+                            format="YYYY-MM-DD hh:mm A"
+                            name="f"
+                            inputFormat="YYYY-MM-DD hh:mm A"
+                            onChange={this.handleChangedate}
+                        />
+                        <Input type="select"
+                            value={this.state.cliente}
+                            name="cliente"
                             required="required"
-                            onChange={this.handleChange}
+                            onChange={this.handleInputChange}
                         >
-                            
-                            {person_list.map((d, index) =>
+
+                            {cliente_list.map((d, index) =>
                                 <option key={index}
                                     value={d.id}>{d.nombre} {d.apellido_paterno} {d.apellido_materno}</option>
                             )}
@@ -118,9 +132,9 @@ class Reserva extends Component {
                             type="checkbox"
                             value={this.state.estado}
                             name="estado"
-                            onChange={this.handleChange} />
+                            onChange={this.handleInputChange} />
 
-                        <input type="submit" className="form2btn" onClick={this.handleSubmit}  />
+                        <input type="submit" className="form2btn" value="Reservar" />
 
                     </form>
 
@@ -134,7 +148,7 @@ class Reserva extends Component {
 
 Reserva.propTypes = {
     data: PropTypes.object,
-    person_list: PropTypes.array,
+    cliente_list: PropTypes.array,
 
 }
 
@@ -142,12 +156,12 @@ const mapStateToProps = (state, props) => {
     if (props.match.params.id) {
         return {
             data: state.reserva.list.find(item => item.id + '' === props.match.params.id + ''),
-            person_list: state.person.list,
+            cliente_list: state.cliente.list,
         }
     }
     return {
         data: null,
-        person_list: state.person.list,
+        cliente_list: state.cliente.list,
 
     }
 
@@ -157,5 +171,5 @@ export default connect(mapStateToProps, {
     save,
     getById,
     update,
-    getPersonList,
+    getClienteList,
 })(Reserva)

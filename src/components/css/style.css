@@ -169,6 +169,24 @@ SECCION PIE DE PAGINA
   opacity: 1;
  }
 
+ /*----------------------------
+ ESTILOS PAGINA NOSOTROS
+ ------------------------------*/
+ .paginas-internas .ruta {
+  background: #0753B5;
+  color: #fff;
+  padding-top: 1rem !important;
+  padding-bottom: 1rem !important;
+}
+.paginas-internas .collapsible span {
+  background: #0753B5;
+  color: #fff;
+  display: block;
+  padding: 1rem;
+  border-radius: 5px;
+  margin: .4rem;
+}
+
  /*--------------------------
  EMPIEZA LAS MEDIAS QUERIES
  -------------------------*/
